@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AutenticacaoService } from './../../autenticacao/autenticacao.service';
 import { Component } from '@angular/core';
 
@@ -10,17 +11,20 @@ export class LoginComponent {
   usuario = '';
   senha = '';
 
-  constructor(private authService: AutenticacaoService) {}
+  constructor(
+    private authService: AutenticacaoService,
+    private router: Router
+  ) {}
 
   login() {
-    this.authService.autenticar(this.usuario, this.senha).subscribe(
-      () => {
-        console.log('Autenticado com sucesso');
+    this.authService.autenticar(this.usuario, this.senha).subscribe({
+      next: () => {
+        this.router.navigate(['animais']);
       },
-      (error) => {
-        alert('Usuário ou senha inválido')
-        console.log(error);
-      }
-    );
+      error: (e) => {
+        alert('Usuário ou senha inválido');
+        console.log(e);
+      },
+    });
   }
 }
