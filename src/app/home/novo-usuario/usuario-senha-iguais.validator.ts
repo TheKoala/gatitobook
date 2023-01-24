@@ -1,6 +1,6 @@
-import { FormGroup } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
-export function usuarioSenhaIguaisValidator(formGroup: FormGroup) {
+export function usuarioSenhaIguaisValidator(formGroup: AbstractControl) {
   const username = formGroup.get('userName')?.value ?? '';
   const password = formGroup.get('password')?.value ?? '';
 
