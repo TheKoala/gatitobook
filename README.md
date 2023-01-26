@@ -1,7 +1,7 @@
 # Gatitobook
 
-Projeto desenvolvido no curso Angular: boas práticas em arquiteturas e formulários da Alura.
-Project developed in the Angular course: good practices in architectures and forms from the Alura school
+Projeto desenvolvido nos cursos Angular: boas práticas em arquiteturas e formulários e Angular: controle o fluxo de navegação da Alura 
+Project developed in the Angular course: good practices in architectures and forms, and Angular: control the navigation flow from the Alura school
  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
