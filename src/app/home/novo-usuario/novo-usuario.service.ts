@@ -1,7 +1,10 @@
+import { environment } from './../../../environments/environment.development';
 import { Observable } from 'rxjs';
 import { NovoUsuario } from './novo-usuario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+const API = environment.apiURL;
 
 @Injectable({
   providedIn: 'root',
@@ -11,14 +14,14 @@ export class NovoUsuarioService {
 
   cadastrarNovoUsuario(novousuario: NovoUsuario): Observable<any> {
     return this.httpClient.post(
-      'http://localhost:3000/user/signup',
+      `${API}/user/signup`,
       novousuario
     );
   }
 
   verificaUsuarioExistente(nomeUsuario: string): Observable<any> {
     return this.httpClient.get(
-      `http://localhost:3000/user/exists/${nomeUsuario}`
+      `${API}/user/exists/${nomeUsuario}`
     );
   }
 }
