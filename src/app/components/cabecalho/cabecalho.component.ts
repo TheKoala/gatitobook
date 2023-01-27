@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cabecalho.component.css'],
 })
 export class CabecalhoComponent {
-  user$ = this.usuarioService.retornaUsurio();
+  user$ = this.usuarioService.retornaUsuario();
 
   constructor(private usuarioService: UsuarioService, private router: Router) {}
 
