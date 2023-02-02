@@ -13,13 +13,6 @@ export class ListaAnimaisComponent {
   animais$ !: Observable<Animais>;
 
   constructor(private usuarioService: UsuarioService, private animaisService: AnimaisService){
-    /* this.usuarioService.retornaUsuario().subscribe((usuario) => {
-      const userName = usuario.name ?? '';
-      this.animaisService.listaDoUsuario(userName).subscribe((animais) => {
-        this.animais = animais;
-      })
-    }) */
-
     this.animais$ = this.usuarioService.retornaUsuario().pipe(
       switchMap((usuario) => {
         const userName = usuario.name ?? '';
